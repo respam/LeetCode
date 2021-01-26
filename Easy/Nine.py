@@ -5,16 +5,29 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
 
+        if x < 0:
+            print("False")
+            return False
+
+        reverse = 0
         number = x
-        stack = []
         while x > 0:
-            st_inp = x % 10
-            x = x / 10
-            stack.append(st_inp)
+            inp = x % 10
+            reverse = (reverse * 10) + inp
+            x = round(x / 10)
 
-        print("Initial Stack")
-        print(stack)
+        # print(reverse, number)
+        if reverse == number:
+            print("True")
+            return True
 
-        size = len(stack)
-        while len(stack) != 0:
-            
+        else:
+            print("False")
+            return False
+
+
+if __name__ == '__main__':
+    Solution.isPalindrome(Solution, 121)
+    Solution.isPalindrome(Solution, -121)
+    Solution.isPalindrome(Solution, 31213)
+    Solution.isPalindrome(Solution, 8)
