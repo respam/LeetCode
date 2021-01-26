@@ -24,3 +24,13 @@ if __name__ == '__main__':
     Solution.twoSum(Solution, [3,2,4], 6)
     Solution.twoSum(Solution, [3,3], 6)
 
+
+# Faster Solution
+
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         for i in range(len(nums)-1):
+#             try:
+#                 return [i, nums[i+1:].index(target - nums[i])+i+1]
+#             except:
+#                 pass

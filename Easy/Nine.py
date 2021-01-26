@@ -15,8 +15,9 @@ class Solution:
             inp = x % 10
             reverse = (reverse * 10) + inp
             x = round(x / 10)
+            print(x)
 
-        # print(reverse, number)
+        print(reverse, number)
         if reverse == number:
             print("True")
             return True
@@ -27,7 +28,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    Solution.isPalindrome(Solution, 121)
-    Solution.isPalindrome(Solution, -121)
-    Solution.isPalindrome(Solution, 31213)
+    # Solution.isPalindrome(Solution, 121)
+    # Solution.isPalindrome(Solution, -121)
+    # Solution.isPalindrome(Solution, 31213)
     Solution.isPalindrome(Solution, 8)
