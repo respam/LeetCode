@@ -10,29 +10,41 @@ class ListNode:
         self.next = next
 
 class Solution:
+
+    def reverse(self, num: int) -> int:
+        rev = 0
+        while num > 0:
+            inp = num % 10
+            rev = (rev * 10) + inp
+            num = num // 10
+
+        return rev
+
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 
-        rev1 = 0
-        rev2 = 0
-        rev_result = 0
+        num1 = 0
+        num2 = 0
 
-        while l1 is not None:
-            rev1 = (rev1 * 10) + l1.val
-            rev2 = (rev2 * 10) + l2.val
-
+        while l1 is not None :
+            num1 = (num1 * 10) + l1.val
             l1 = l1.next
+
+        while l2 is not None:
+            num2 = (num2 * 10) + l2.val
             l2 = l2.next
 
-        total = rev1 + rev2
+        num1 = Solution.reverse(Solution, num1)
+        num2 = Solution.reverse(Solution, num2)
 
-        head = ListNode()
-        head = ListNode(ListNode, total % 10)
+        total = num1 + num2
+
+        head = ListNode(total % 10, None)
         l3 = head
         total = total // 10
 
         while total > 0:
             num = total % 10
-            l3.next = ListNode(ListNode, num)
+            l3.next = ListNode(num, None)
             l3 = l3.next
             total = total // 10
 
@@ -43,12 +55,12 @@ class Solution:
 
 
 if __name__ == '__main__':
-    l1 = ListNode(ListNode, 2)
-    l1.next = ListNode(ListNode, 4)
-    l1.next.next = ListNode(ListNode, 3)
+    l1 = ListNode(2, None)
+    l1.next = ListNode(4, None)
+    l1.next.next = ListNode(3, None)
 
-    l2 = ListNode(ListNode, 5)
-    l2.next = ListNode(ListNode, 6)
-    l2.next.next = ListNode(ListNode, 4)
+    l2 = ListNode(5, None)
+    l2.next = ListNode(6, None)
+    l2.next.next = ListNode(4, None)
 
     Solution.addTwoNumbers(Solution, l1, l2)
